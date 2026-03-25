@@ -33,7 +33,7 @@ const HeroSection = () => {
             <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden ">
                 <h1 className='font-extrabold absolute bottom-[60%] text-8xl rotate-90 left-8 origin-left text-black/10 md:text-9xl md:left-10 md:bottom-1/2 lg:text-9xl lg:left-10 lg:bottom-1/2' >CODER</h1>
                 <h1 className='absolute top-1 left-4 md:top-1 md:left-8 px-4 py-1 neo-border bg-[#00D3F2] text-white text-xl font-black shadow-neo active:translate-x-3 active:translate-y-3 active:shadow-none transition-all cursor-pointer z-50' >
-                    <a href="">tauheed.dev</a>
+                    <a href="">tauheed</a>
                 </h1>
 
                 <button className='w-[120px] sm:w-[130px] absolute top-1 right-4 md:top-1 md:right-8 px-4 py-1 neo-border bg-[#3cf200] text-black text-xl font-black shadow-neo active:translate-x-3 active:translate-y-3 active:shadow-none transition-all cursor-pointer z-50'>
