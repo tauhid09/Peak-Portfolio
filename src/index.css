@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FF6633;
+  --color-neon-pink: #62E998;
+  --color-electric-blue: #0C6D6D;
+  --color-off-white: #f8fbfa;
+  --color-soft-gray: #e5e5e5;
+  --color-background-light: #f4f9f7;
+  --color-background-dark: #003333;
+  --color-neo-lavender: #003333;
+  --color-neo-mint: #62E998;
+  --color-neo-peach: #FF6633;
+  --color-neo-blue: #0C6D6D;
+  --color-accent-cyan: #62E998;
+  --color-accent-pink: #FF6633;
+  --color-neo-cyan: #0C6D6D;
+  --color-neo-lime: #62E998;
+  --color-neo-purple: #003333;
+  --color-neo-orange: #FF6633;
+  --color-neo-yellow: #FF6633;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --radius-full: 9999px;
+
+  --shadow-neo: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-neo-sm: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-neo-lg: 12px 12px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-neo-dark: 8px 8px 0px 0px rgba(255, 255, 255, 0.1);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 3s infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(var(--tw-rotate, 0deg));
+    }
+
+    50% {
+      transform: translateY(-20px) rotate(var(--tw-rotate, 0deg));
+    }
+  }
+
+  --animate-spin-slow: spin 10s linear infinite;
+  --animate-bounce-slight: bounce-slight 4s ease-in-out infinite;
+  --animate-wiggle: wiggle 5s ease-in-out infinite;
+  --animate-pulse-slow: custom-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes bounce-slight {
+
+    0%,
+    100% {
+      transform: translateY(-10px) rotate(var(--tw-rotate, 0deg));
+    }
+
+    50% {
+      transform: translateY(10px) rotate(var(--tw-rotate, 0deg));
+    }
+  }
+
+  @keyframes wiggle {
+
+    0%,
+    100% {
+      transform: rotate(calc(var(--tw-rotate, 0deg) - 8deg));
+    }
+
+    50% {
+      transform: rotate(calc(var(--tw-rotate, 0deg) + 8deg));
+    }
+  }
+
+  @keyframes custom-pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(var(--tw-rotate, 0deg));
+    }
+
+    50% {
+      opacity: .8;
+      transform: scale(1.05) rotate(var(--tw-rotate, 0deg));
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#fcfced] text-slate-900 min-h-screen font-display antialiased;
+  }
+
+  .dark body {
+    @apply bg-background-dark text-slate-100;
+  }
+}
+
+@layer utilities {
+  .dot-grid {
+    background-image:
+      radial-gradient(circle, black 1px, transparent 1px),
+      linear-gradient(to right, transparent 11.5px, rgba(0, 0, 0, 0.1) 11.5px, rgba(0, 0, 0, 0.1) 12.5px, transparent 12.5px),
+      linear-gradient(to bottom, transparent 11.5px, rgba(0, 0, 0, 0.1) 11.5px, rgba(0, 0, 0, 0.1) 12.5px, transparent 12.5px);
+    background-size: 24px 24px, 96px 96px, 96px 96px;
+    background-color: transparent;
+    z-index: 0;
+  }
+
+  .dark .dot-grid {
+    background-image:
+      radial-gradient(circle, #000000 1px, transparent 1px),
+      linear-gradient(to right, transparent 11.5px, rgba(0, 0, 0, 0.1) 11.5px, rgba(0, 0, 0, 0.1) 12.5px, transparent 12.5px),
+      linear-gradient(to bottom, transparent 11.5px, rgba(0, 0, 0, 0.1) 11.5px, rgba(0, 0, 0, 0.1) 12.5px, transparent 12.5px);
+    background-size: 24px 24px, 96px 96px, 96px 96px;
+  }
+
+  .neo-border {
+    border: 4px solid black;
+  }
+
+  .neo-border-3 {
+    border: 3px solid black;
+  }
+
+  .neo-border-thick {
+    border: 6px solid black;
+  }
+
+  .thin-border {
+    border: 2px solid black;
+  }
+
+  .thick-border {
+    border: 4px solid black;
+  }
+
+  .neo-border-sm {
+    border: 3px solid #000000;
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+
+  .neo-border-thin {
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 0px 0px #000000;
+  }
+
+  .neo-button-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0px 0px #000000;
+  }
+
+  .neo-button-hover:active {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1.5px black;
+    color: transparent;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .tilt-card {
+    transform: rotate(-3deg);
+  }
+}
