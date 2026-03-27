@@ -1,0 +1,305 @@
+/* ========================================
+   Loading Page - Neo-Brutalist Style
+   ======================================== */
+
+.loading-page {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f5f5f0;
+  overflow: hidden;
+}
+
+/* Subtle noise texture */
+.loading-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* Content wrapper */
+.loading-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 4rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Status badge */
+.loading-status-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 6px 16px;
+  background-color: #f0a8d0;
+  border: 2px solid #111;
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 1.2rem;
+  box-shadow: 3px 3px 0px 0px #111;
+}
+
+/* LOADING title */
+.loading-title {
+  font-family: 'Space Grotesk', 'Arial Black', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: #111;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+
+/* Progress bar wrapper */
+.loading-progress-wrapper {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+/* 3D layered progress container */
+.loading-progress-container {
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+
+.loading-progress-shadow {
+  position: absolute;
+  inset: 0;
+  top: 8px;
+  left: 8px;
+  background-color: #111;
+  border: 3px solid #111;
+}
+
+.loading-progress-mid {
+  position: absolute;
+  inset: 0;
+  top: 4px;
+  left: 4px;
+  background-color: #d4d4d0;
+  border: 3px solid #111;
+}
+
+.loading-progress-bar {
+  position: absolute;
+  inset: 0;
+  background-color: #d4d4d0;
+  border: 3px solid #111;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.loading-progress-fill {
+  height: 100%;
+  background-color: #00e639;
+  transition: width 0.08s linear;
+  position: relative;
+}
+
+.loading-progress-text {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111;
+  z-index: 2;
+}
+
+/* Response time badge */
+.loading-response-badge {
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  background-color: #ffd700;
+  border: 3px solid #111;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 4px 4px 0px 0px #111;
+  z-index: 3;
+}
+
+.loading-response-time {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #111;
+  line-height: 1;
+}
+
+.loading-response-label {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Bottom section */
+.loading-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.loading-message {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.7;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  max-width: 480px;
+}
+
+.loading-icons {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.loading-icon-box {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.loading-icon-box:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+.loading-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  background-color: #111;
+  position: relative;
+  z-index: 1;
+}
+
+.loading-footer-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #f0a8d0;
+  letter-spacing: 0.02em;
+}
+
+.loading-footer-copy {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: #999;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.loading-footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.loading-footer-links span {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #ccc;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.loading-footer-links span:hover {
+  color: #fff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .loading-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .loading-title {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .loading-progress-container {
+    height: 48px;
+  }
+
+  .loading-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .loading-footer {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .loading-response-badge {
+    right: 0;
+    bottom: -25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .loading-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .loading-progress-container {
+    height: 40px;
+  }
+
+  .loading-status-badge {
+    font-size: 0.6rem;
+    padding: 4px 10px;
+  }
+
+  .loading-message {
+    font-size: 0.65rem;
+  }
+}
