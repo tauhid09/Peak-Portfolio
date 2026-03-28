@@ -57,7 +57,7 @@ const HeroSection = () => {
                                 <div className="text-[#F8F8F5]" style={{ WebkitTextStroke: 'clamp(1px, 0.3vw + 1px, 4px) black' }}>DEVELOPER</div>
                             </h1>
                         </div>
-
+                        
                         <div className="flex flex-wrap justify-center gap-10 sm:gap-10 mt-10 w-full">
                             <button className="min-w-[170px] h-20 neo-border bg-primary text-white text-xl font-black shadow-neo active:translate-x-3 active:translate-y-3 active:shadow-none transition-all uppercase tracking-tight cursor-pointer">
                                 View Projects

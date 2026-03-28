@@ -35,7 +35,7 @@ const AboutMe = () => {
                     <div className="w-full max-w-[1200px]">
 
                         {/* Header: Title + Download CV */}
-                        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-6">
+                        <div className="scale-[0.8] sm:scale-[0.6] flex flex-col md:flex-row justify-center items-center gap-8 mb-6">
                             <div className="flex flex-col">
                                 <h1 className="text-7xl md:text-[10rem] font-black tracking-tighter leading-[0.85] uppercase">
                                     About<button className="px-3 py-1 neo-border bg-[#00D3F2] text-white text-7xl md:text-[10rem] font-black shadow-neo active:translate-x-3 active:translate-y-3 active:shadow-none transition-all cursor-pointer z-50">ME</button>
